@@ -16,11 +16,14 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
+from translator.views import translator_home  # Import the view
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', include('dashboard.urls')),  # For the dashboard app
-    
+    path('', include('translator.urls')),
+    path('dashboard/', include('dashboard.urls')),
+   
+    # Add other app URLs as needed
 ]
 
 
